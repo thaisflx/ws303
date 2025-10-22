@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<link rel="stylesheet" href="style.css">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Graphique taux de parole radio</title>
+
+<body>
+  <canvas id="radioChart2000"></canvas>
+  <canvas id="radioChart2005"></canvas>
+  <canvas id="radioChart2010"></canvas>
+  <canvas id="radioChart2015"></canvas>
+  <canvas id="radioChart2019"></canvas>
+
+  <canvas id="tvChart2010"></canvas>
+  <canvas id="tvChart2015"></canvas>
+  <canvas id="tvChart2019"></canvas>
+
+  <canvas id="barChartGender" width="600" height="400"></canvas>
+  <canvas id="donutChartGender" width="600" height="400"></canvas>
+  <canvas id="lineChartRadio" width="800" height="400"></canvas>
+  <canvas id="lineChartTV" width="800" height="400"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="script.js"></script>
+
+<div class="timeline">
+  <div class="timeline-nav">
+    <ul>
+      <li data-target="year1995">1995</li>
+      <li data-target="year2000">2000</li>
+      <li data-target="year2005">2005</li>
+      <li data-target="year2010">2010</li>
+      <li data-target="year2015">2015</li>
+      <li data-target="year2019">2019</li>
+    </ul>
+  </div>
+
+  <div class="timeline-content">
+    <section id="year1995" class="year-block timeline-block">
+      <h2>1995</h2>
+      <canvas id="radioChart1995"></canvas>
+    </section>
+
+    <section id="year2000" class="year-block timeline-block">
+      <h2>2000</h2>
+      <canvas id="radioChart2000"></canvas>
+    </section>
+    
+  <div class="timeline-content">
+    <section id="year1995" class="year-block timeline-block">…</section>
+    <section id="year2000" class="year-block timeline-block">…</section>
+    <section id="year2005" class="year-block timeline-block">…</section>
+    <section id="year2010" class="year-block timeline-block">…</section>
+    <section id="year2015" class="year-block timeline-block">…</section>
+    <section id="year2019" class="year-block timeline-block">…</section>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  let isScrollingByClick = false;
+
+function setActive(index) {
+  document.querySelectorAll(".timeline-nav li").forEach((el, i) => {
+    el.classList.toggle("active", i === index);
+  });
+  document.querySelectorAll(".year-block").forEach((section, i) => {
+    section.classList.toggle("active", i === index);
+  });
+}
+
+document.querySelectorAll(".timeline-nav li").forEach((li, index) => {
+  li.addEventListener("click", () => {
+    isScrollingByClick = true;
+    setActive(index);
+    const target = document.getElementById(li.dataset.target);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  });
+});
+
+window.addEventListener("scroll", () => {
+  if (isScrollingByClick) return;
+
+  const sections = document.querySelectorAll(".year-block");
+  let currentIndex = 0;
+
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      currentIndex = index;
+    }
+  });
+
+  setActive(currentIndex);
+});
+
+</script>
+
+
+</body>
