@@ -1,28 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
-<link rel="stylesheet" href="style.css">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Graphique taux de parole radio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANORA</title>
+    <link rel="stylesheet" href="style.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/open-dyslexic@0.2.0/open-dyslexic.css" rel="stylesheet" />
+
+</head>
 <body>
-  <canvas id="radioChart2000"></canvas>
-  <canvas id="radioChart2005"></canvas>
-  <canvas id="radioChart2010"></canvas>
-  <canvas id="radioChart2015"></canvas>
-  <canvas id="radioChart2019"></canvas>
 
-  <canvas id="tvChart2010"></canvas>
-  <canvas id="tvChart2015"></canvas>
-  <canvas id="tvChart2019"></canvas>
+    <header>
+        <nav class="navbar">
+            <div class="logopanora">
+                <img id="logoPanora" src="img/logopanora.svg" alt="Logo PANORA">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#equipe">Équipe</a></li>
+                <li><a href="#donnee">Données</a></li>
+                <li><a href="#Ressources">Ressources</a></li>
+            </ul>
+            <div class="accessibilite">
+                <button id="accessBtn">Accessibilité ▾</button>
+                <ul class="dropdown" id="dropdownMenu">
+                      <li>
+                        <button onclick="toggleDarkMode()" class="accessibility-button">
+                          <img src="img/darkMode.svg" alt="Dark Mode" class="icon-darkmode">
+                          Mode sombre
+                        </button>
+                      </li>
 
-  <canvas id="barChartGender" width="600" height="400"></canvas>
-  <canvas id="donutChartGender" width="600" height="400"></canvas>
-  <canvas id="lineChartRadio" width="800" height="400"></canvas>
-  <canvas id="lineChartTV" width="800" height="400"></canvas>
+                      <li>
+                        <button onclick="toggleFont()" class="accessibility-button">
+                          <img src="img/Police.svg" alt="Police" class="icon-police">
+                          Police
+                        </button>
+                      </li>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                      <li>
+                        <button onclick="increaseFontSize()" class="accessibility-button">
+                          <img src="img/TailleTexte.svg" alt="Taille du Texte" class="icon-TailleTexte">
+                          Taille du Texte
+                        </button>
+                      </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+  
+    <section id="accueil" class="section accueil">
+        <h1>QUAND LES DONNÉES RACONTENT UNE HISTOIRE</h1>
+        <div class="intro-box">
+            <img src="img/logopanora.svg" alt="Logo Panora" class="intro-logo">
+            <p class="sous-titre">Agence de data-analyse spécialisée dans l’étude des médias et de leurs évolutions.</p>
+            <p>Découvrez notre dernière analyse portant sur la place des femmes dans les émissions télévisées et radiophoniques, depuis leurs débuts jusqu’à aujourd’hui.
+            À travers une approche basée sur la datavisualisation, nous mettons en lumière les tendances, les évolutions et les inégalités encore présentes dans le paysage médiatique.</p><br>
+            <button class="btn-decouvrir" onclick="goToAnalyse()">
+                Découvrir
+                <img src="img/iconFlèche.svg" alt="" class="icon-fleche">
+            </button>
+        </div>
+    </section>
+
+
+
+    
+    <section id="equipe" class="section equipe">
+        <h1>NOTRE ÉQUIPE</h1>
+        <div class="grid equipe-grid">
+          <div class="card">
+            <img src="img/FELIX_Thais_C-1.jpg" alt="Membre 1" class="photo-membre">
+            <div class="infos-membre">
+                <h2>Thaïs Félix</h2>
+              <p><strong>Rôle : </strong> Développeuse </p>
+              <p><strong>Email :</strong><br>
+                <a href="mailto:thais.felix@etudiant.univ-reims.fr">thais.felix@etudiant.univ-reims.fr</a>
+              </p>
+              <p><strong>Téléphone :</strong> 06 12 34 56 78</p>
+            </div>
+          </div>
+      
+          <div class="card">
+            <img src="img/photoAlexandra .jpg.webp" alt="Membre 2" class="photo-membre">
+            <div class="infos-membre">
+                <h2>Alexandra Violette</h2>
+              <p><strong>Rôle :</strong> Documentaliste</p>
+              <p><strong>Email :</strong>
+                <a href="mailto:alexandra.violette1@etudiant.univ-reims.fr">alexandra.violette1@etudiant.univ-reims.fr</a>
+              </p>
+              <p><strong>Téléphone :</strong> 06 12 34 56 78</p>
+            </div>
+          </div>
+      
+          <div class="card">
+            <img src="img/photoshera.jpeg" alt="Membre 3" class="photo-membre">
+            <div class="infos-membre">
+                <h2>Shérazade El Missaoui</h2>
+              <p><strong>Rôle :</strong> Graphiste</p>
+              <p><strong>Email :</strong>
+              <a href="mailto:sherazade.el-missaoui@etudiant.univ-reims.fr">sherazade.el-missaoui@etudiant.univ-reims.fr</a>
+              <p><strong>Téléphone :</strong> 06 12 34 56 78</p>
+            </div>
+          </div>
+      
+          <div class="card">
+            <img src="img/myriamphoto.jpg" alt="Membre 4" class="photo-membre">
+            <div class="infos-membre">
+                <h2>Myriam El Arnouki </h2>
+              <p><strong>Rôle :</strong> Développeuse </p>
+              <p><strong>Email :</strong>
+              <a href="mailto:myriam.el-arnouki@etudiant.univ-reims.fr">myriam.el-arnouki@etudiant.univ-reims.fr</a>
+              <p><strong>Téléphone :</strong> 07 76 74 82 44</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Analyse -->
+
+    <section id="donnee" class="section donnee">
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="script.js"></script>
 
@@ -48,20 +150,40 @@
       <h2>2000</h2>
       <canvas id="radioChart2000"></canvas>
     </section>
-    
-  <div class="timeline-content">
-    <section id="year1995" class="year-block timeline-block">…</section>
-    <section id="year2000" class="year-block timeline-block">…</section>
-    <section id="year2005" class="year-block timeline-block">…</section>
-    <section id="year2010" class="year-block timeline-block">…</section>
-    <section id="year2015" class="year-block timeline-block">…</section>
-    <section id="year2019" class="year-block timeline-block">…</section>
-  </div>
-</div>
 
+    <section id="year2005" class="year-block timeline-block">
+      <h2>2005</h2>
+      <canvas id="radioChart2005"></canvas>
+    </section>
+
+    <section id="year2010" class="year-block timeline-block">
+      <h2>2010</h2>
+      <canvas id="radioChart2010" width="300" height="100"></canvas>
+      <canvas id="tvChart2010" width="300" height="100"></canvas>
+    </section>
+
+    <section id="year2015" class="year-block timeline-block">
+      <h2>2015</h2>
+      <canvas id="radioChart2015" width="300" height="100"></canvas>
+      <canvas id="tvChart2015"></canvas>
+    </section>
+
+    <section id="year2019" class="year-block timeline-block">
+      <h2>2019</h2>
+      <canvas id="radioChart2019"></canvas>
+      <canvas id="tvChart2019"></canvas>
+      <canvas id="barChartGender" width="200" height="100"></canvas>
+      <canvas id="donutChartGender" width="200" height="100"></canvas>
+    </section>
+
+
+  <canvas id="lineChartRadio" width="300" height="100"></canvas>
+  <canvas id="lineChartTV" width="300" height="100"></canvas>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 <script>
   let isScrollingByClick = false;
 
@@ -101,6 +223,56 @@ window.addEventListener("scroll", () => {
 });
 
 </script>
+    </section>
 
 
+
+ 
+<section id="Ressources" class="section source">
+    <h2>RESSOURCES DE NOS RECHERCHES</h2>
+    <div class="grid analyse-grid">
+
+       
+        <div class="cardsource">
+            <img src="img/logoina.png" alt="Logo INA" class="photo-logo">
+            <div class="source-info h2">
+                <h2>
+                    <a href="https://www.ina.fr/" target="_blank">
+                        INA Institut national <br> de l’audiovisuel
+                    </a>
+                </h2>
+            </div>
+        </div>
+
+       
+        <div class="cardsource">
+            <img src="img/datagouv.png" alt="Logo Data Gouv" class="photo-logo">
+            <div class="source-info h2">
+                <h2>
+                    <a href="https://www.data.gouv.fr/" target="_blank">
+                        Data.gouv.fr
+                    </a>
+                </h2>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="telechargements" class="section">
+<h3>TABLE DE DONNÉES</h3><br><br><br>
+<ul>
+  <li><a href="files/parole_genre_femmes.csv" download>
+    <img src="img/téléchargement.svg" alt="Télécharger" class="icon-telechargement"><br>
+    Taux de parole des femmes</a></li>
+
+  <li><a href="files/radio_femmes.csv" download>
+    <img src="img/téléchargement.svg" alt="Télécharger" class="icon-telechargement"><br>
+    Taux de parole des femmes a la radio</a></li>
+  <li><a href="files/tv_femmes.csv" download>
+    <img src="img/téléchargement.svg" alt="Télécharger" class="icon-telechargement"><br>
+    Taux de parole des femmes a la TV</a></li>
+</ul>
+</section>
+    </section>
 </body>
+</html>

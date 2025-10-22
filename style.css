@@ -1,3 +1,481 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: 16px; 
+}
+
+h1, h2, h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 3.75rem; 
+}
+
+h1 {
+    font-size: 2rem; 
+}
+
+h2 {
+    font-size: 1.5rem; 
+}
+
+h3 {
+    font-size: 1.3rem; 
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 75rem; 
+    margin: auto;
+    padding: 0.625rem 1.25rem; 
+}
+
+.logopanora img {
+    height: 1.25rem; 
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2.5rem; 
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.25rem; 
+}
+
+.accessibilite {
+    position: relative;
+    font-size: 1rem;
+}
+
+.accessibility-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.3125rem 0.625rem; 
+}
+  
+.accessibility-button .icon {
+    width: 1.25rem; 
+    height: auto;
+}
+
+#accessBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.0625rem; 
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0.625rem;
+    margin-top: 0.3125rem; 
+}
+
+.dropdown li {
+    margin: 0.3125rem 0; 
+}
+
+.dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.section {
+    padding: 6.25rem 1.25rem 3.75rem; 
+    max-width: 75rem; 
+    margin: auto;
+}
+
+.intro-box {
+    background: #F7F0DC;
+    padding: 2.5rem;
+    border-radius: 1.875rem; 
+    text-align: center;
+    min-height: calc(60vh - 60px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem; 
+}
+
+.intro-logo {
+    height: 2.5rem; 
+    margin-bottom: 0.625rem;
+}
+
+.sous-titre {
+    font-size: 0.9375rem; 
+    margin-bottom: 1.25rem; 
+}
+
+.btn-decouvrir {
+    background: #FFC9A3;
+    padding: 0.5rem 1.25rem; 
+    font-size: 1.4375rem; 
+    color: #000000;
+    border: none;
+    border-radius: 3.125rem; 
+    font-weight: 700;
+    width: fit-content;
+    display: inline-block;
+    margin: 0 auto; 
+    cursor: pointer;
+}
+
+.icon-fleche {
+    position: relative;
+    top: 0.25rem; 
+}
+
+
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem; 
+    max-width: 125rem; 
+    margin: 2.5rem auto 0;
+    padding: 0 1.25rem;
+}
+
+
+.card {
+    display: flex;
+    align-items: center;
+    padding: 1.875rem 2.5rem; 
+    border-radius: 1.25rem; 
+    background: #2A4E62;
+    gap: 1.5625rem; 
+    min-height: 11.25rem; 
+    color: white;
+    box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.2);
+}
+
+
+.photo-membre {
+    width: 10rem; 
+    height: 12.5rem; 
+    border-radius: 9%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.infos-membre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.infos-membre h2 {
+    margin: 0 0 0.625rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.infos-membre p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.infos-membre a {
+    color: white;
+    text-decoration: none;
+    word-break: break-all;
+    display: inline-block;
+    font-size: 0.90625rem; 
+}
+
+
+body.dark-mode {
+    background-color: #001C2F;
+    color: #F7F0DC;
+}
+
+
+body.dark-mode header {
+    background-color: #001C2F;
+    border-bottom: 0 solid #001C2F;
+}
+
+body.dark-mode nav a {
+    color: #F7F0DC;
+}
+
+body.dark-mode nav a:hover {
+    color: #FFC9A3;
+}
+
+
+body.dark-mode h1 {
+    color: #F7EED3;
+}
+
+body.dark-mode h2 {
+    color: #F7EED3;
+}
+
+body.dark-mode .cardsource h2 {
+    color: #000000;
+}
+
+body.dark-mode h3 {
+    color: #E9D8A6;
+}
+
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span {
+    color: #001C2F;
+}
+
+
+body.dark-mode button,
+body.dark-mode .btn {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode .btn-decouvrir {
+    background-color: #FFC9A3;
+    color: #000000;
+}
+
+body.dark-mode .btn-decouvrir:hover {
+    background-color: #F7F0DC;
+}
+
+
+body.dark-mode section {
+    background-color: #001C2F;
+    border-radius: 10px;
+}
+
+
+body.dark-mode .accessibility-menu {
+    background-color: #ffffff;
+    color: #F7F0DC;
+    border: 1px solid #F7EED3;
+}
+
+
+body.dark-mode #accessBtn {
+    color: #F7F0DC;
+}
+
+
+body.dark-mode .dropdown {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+}
+
+
+body.dark-mode .dropdown button {
+    color: #000000;
+}
+
+
+body.dark-mode a {
+    color: #F7EED3;
+}
+
+body.dark-mode a:hover {
+    color: #E9D8A6;
+}
+
+body.dark-mode .card {
+    background-color: #FFC9A3;
+    color: #F7F0DC;
+}
+
+body.dark-mode .infos-membre h2 {
+    color: #000000;
+}
+
+body.dark-mode .infos-membre a {
+    color: #000000;
+}
+
+body.dark-mode .infos-membre p {
+    color: #000000;
+}
+
+
+
+.font-dyslexic {
+    font-family: 'OpenDyslexic', 'Lexend', Arial, sans-serif;
+}
+
+
+body.large-text * {
+    font-size: 1.5rem !important; 
+}
+
+
+
+.analyse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.875rem; 
+    margin-top: 2rem;
+}
+
+
+.source-card {
+    display: flex;
+    align-items: center;
+    background-color: #2A4E62;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    gap: 1rem;
+}
+
+
+.source-card:hover {
+    transform: translateY(-4px);
+}
+
+
+.source-logo {
+    width: 80px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+}
+
+
+.source-info h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+
+    .photo-logo {
+        width: 190px;         
+        height: 140px;       
+        object-fit: contain;  
+        padding: 10px;        
+        border-radius: 10px;  
+        flex-shrink: 0;
+    }
+
+
+    .cardsource {
+        display: flex;
+        align-items: center;
+        padding: 1.875rem 2.5rem; 
+        border-radius: 1.25rem; 
+        background: #2A4E62;
+        gap: 1.5625rem; 
+        min-height: 11.25rem;
+        color: rgb(255, 255, 255);
+        box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.2);
+    }
+
+    .cardsource a {
+        color: #fffefa; 
+        text-decoration: none; 
+        font-weight: 700;
+    }
+    
+    .cardsource a:hover {
+        color: #FFC9A3;
+        text-decoration: underline; 
+    }
+
+
+    #telechargements ul {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0 0 0;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap; 
+      }
+      
+      #telechargements li {
+        flex: none;
+      }
+      
+      #telechargements a {
+        display: flex;
+        flex-direction: column;  
+        align-items: center;
+        justify-content: center;
+      
+        background-color: #2A4E62;
+        color: white;
+        width: 180px;
+        height: 180px;
+        border-radius: 1rem;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+      
+      #telechargements a:hover {
+        background-color: #FFC9A3;
+        color: #000000;
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      }
+      
+      .icon-telechargement {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+      }
+  
+
+/*FRISE CHRONO*/
 .timeline-nav {
   position: sticky;
   top: 20%;
@@ -84,7 +562,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .year-block {
@@ -101,5 +579,9 @@
   transform: scale(1.02);
   opacity: 1;
   border: 2px solid #FFC9A3;
+}
+
+canvas {
+    width: 200px;
 }
 

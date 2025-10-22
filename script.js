@@ -356,7 +356,36 @@ function createLineChartTV(data) {
 }
 //CONCLU TV
 
-//ANIMATION FRISE
+// Toggle dropdown menu
+document.getElementById('accessBtn').addEventListener('click', () => {
+    const menu = document.getElementById('dropdownMenu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+});
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+
+    const logo = document.getElementById("logoPanora");
+    const isDark = document.body.classList.contains("dark-mode");
+
+    logo.src = isDark ? "img/logopanorabeige.svg" : "img/logopanora.svg";
+}
+
+
+function increaseFontSize() {
+    document.body.classList.toggle('large-text');
+}
+
+function goToAnalyse() {
+    const analyseSection = document.getElementById('analyse');
+    if (analyseSection) {
+        analyseSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function toggleFont() {
+    document.body.classList.toggle('font-dyslexic');
+}
 
 
 
